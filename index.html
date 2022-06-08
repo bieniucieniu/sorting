@@ -2,12 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>sorting Visualizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./src/style.css" />
+    <title>Sorting Visualization</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <nav class="nav-bar">
+      <ul class="nav-content">
+        <li>
+          <button class="btn bubble-sort">Bubble sort</button>
+        </li>
+        <li>
+          <button class="btn insertion-sort">Insertion sort</button>
+        </li>
+        <li>
+          <button class="btn quicksort">Quicksort</button>
+        </li>
+        <li>
+          <button class="btn merge-sort">Merge sort</button>
+        </li>
+      </ul>
+    </nav>
+    <main class="main-content">
+      <div class="graph-container">
+        <div class="canvas-container">
+          <canvas id="canvas"></canvas>
+        </div>
+      </div>
+      <div class="graph-context"></div>
+    </main>
+    <script type="module" src="./src/main.ts"></script>
   </body>
 </html>

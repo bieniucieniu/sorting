@@ -46,16 +46,16 @@ const merge = async (canvasObject: CanvasObject, left: number, mid: number, righ
 }
 
 
-const mergeSortHelper = async (canvasObject: CanvasObject, left: number, right: number, colorProperty?: ColorProperty, accentColorPorperty?: ColorProperty) => {
+const mergesortHelper = async (canvasObject: CanvasObject, left: number, right: number, colorProperty?: ColorProperty, accentColorPorperty?: ColorProperty) => {
     if (left < right) {
         const mid = Math.floor((left + right) / 2);
-        await mergeSortHelper(canvasObject, left, mid, colorProperty, accentColorPorperty);
-        await mergeSortHelper(canvasObject, mid + 1, right, colorProperty, accentColorPorperty);
+        await mergesortHelper(canvasObject, left, mid, colorProperty, accentColorPorperty);
+        await mergesortHelper(canvasObject, mid + 1, right, colorProperty, accentColorPorperty);
         await merge(canvasObject, left, mid, right, colorProperty, accentColorPorperty);
     }
 }
 
-export const mergeSort = async (canvasObject: CanvasObject, colorProperty?: ColorProperty, accentColorPorperty?: ColorProperty) => {
+export const mergesort = async (canvasObject: CanvasObject, colorProperty?: ColorProperty, accentColorPorperty?: ColorProperty) => {
     const {array} = canvasObject;
-    await mergeSortHelper(canvasObject, 0, array.length - 1, colorProperty, accentColorPorperty);
+    await mergesortHelper(canvasObject, 0, array.length - 1, colorProperty, accentColorPorperty);
 }

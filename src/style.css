@@ -1,8 +1,113 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    font-family: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    --bg-color-primary: hsl(0, 0%, 100%);
+    --bg-color-secondary: hsl(240, 73%, 97%);
+    --button-bg-color: hsl(250, 75%, 70%);
+    --button-font-color: hsl(0, 0%, 100%);
+    --button-bg-color-hover: hsl(258, 78%, 60%);
+    --button-font-color-hover: hsl(0, 0%, 90%);
+    --font-color-primary: hsl(240, 16%, 48%);
+    --font-color-secondary: hsl(240, 81%, 71%);
+    --font-color-tertiary: hsl(240, 81%, 71%);
+}
+
+html[data-theme="dark"] {
+    --bg-color-primary: hsl(240, 5%, 11%);
+    --bg-color-secondary: hsl(240, 4%, 21%);
+}
+
+body {
+    width: 100vw;
+    font-family: "Poppins", sans-serif;
+
+    background-color: var(--bg-color-primary);
+    height: 90vh;
+}
+
+.nav-bar {
+    display: flex;
+    padding: 0.6em;
+    margin: 0;
+    justify-content: center;
+    background-color: var(--bg-color-secondary);
+}
+
+.nav-content {
+    display: grid;
+    gap: 0.5em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.nav-content li {
+    display: inline-block;
+}
+
+.btn {
+    background-color: var(--button-bg-color);
+    border: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 0.5rem 2em;
+    border-radius: 0.6em;
+    cursor: pointer;
+    color: var(--button-font-color);
+    background-color: var(--button-bg-color);
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+
+.btn:hover {
+    background-color: var(--button-bg-color-hover);
+    color: var(--button-font-color-hover);
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.canvas-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    grid-template-rows: 100%;
+    height: 100%;
+}
+
+.graph-container {
+    margin: 0;
+    width: 70vw;
+    height: 70vh;
+    padding: 100px;
+    color: rgb(248, 248, 248);
+}
+
+.main-content > * {
+    margin: auto;
+}
+
+.graph-context {
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .nav-content {
+        grid-template-columns: 1fr 1fr;
+    }
+    .btn {
+        font-size: 14px;
+    }
 }

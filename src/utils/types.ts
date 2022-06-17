@@ -1,6 +1,5 @@
 
 export type CanvasObject ={
-    array: number[],
     canvas: HTMLCanvasElement,
     ctx: CanvasRenderingContext2D,
 }
@@ -13,4 +12,10 @@ export type DrawZoneProperty = {
 export type ColorProperty = {
     bgColor: string,
     columnColor: string,
+}
+
+export type step = {
+    type: "compare" | "swap",
+    target: number[],
+    value?: number,
 }

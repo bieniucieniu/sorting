@@ -1,8 +1,9 @@
-import './style.css'
+import { mergesort } from "./algorithms/mergesort";
+import { quicksort } from "./algorithms/quicksort";
+import {range} from "./utils/range";
+import {shuffle} from "./utils/shuffle";
 
-const app = document.querySelector<HTMLDivElement>('#app')!
-
-app.innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+let arr = shuffle(range(20));
+console.log(arr);
+console.log(await mergesort(arr));
+console.log(arr);

@@ -1,7 +1,7 @@
 import { step } from "../utils/types";
 
 
-const partition = async (array: number[], start: number, end: number, steps: step[]): Promise<number> => {
+const partition = (array: number[], start: number, end: number, steps: step[]): number => {
     let pivot = array[end];
     let i = start - 1;
 
@@ -28,16 +28,16 @@ const partition = async (array: number[], start: number, end: number, steps: ste
 }
 
 
-const quicksortHelper = async (array: number[], start: number, end: number, steps: step[]): Promise<step[]> => {
+const quickSortHelper =  (array: number[], start: number, end: number, steps: step[]): step[] => {
     if (start >= end) return steps;
 
-    let p = await partition(array, start, end, steps);
-    await quicksortHelper(array, start, p - 1, steps);
-    await quicksortHelper(array, p + 1, end, steps);
+    let p = partition(array, start, end, steps);
+    quickSortHelper(array, start, p - 1, steps);
+    quickSortHelper(array, p + 1, end, steps);
     return steps;
 }
 
-export const quicksort = async (array: number[]): Promise<step[]> => {
+export const quickSort =  (array: number[]): step[] => {
     let steps: step[] = [];
-    return await quicksortHelper(array, 0, array.length - 1, steps);
+    return quickSortHelper(array, 0, array.length - 1, steps);
 }

@@ -1,6 +1,6 @@
 import { step } from "../utils/types";
 
-export const insertionsort = async (array: number[]): Promise<step[]> => {
+export const insertionSort = (array: number[]): step[] => {
     let steps: step[] = [];
     for (let i = 0; i < array.length; i++) {
         for (let j = i; j > 0 && array[j] < array[j - 1]; j--) {

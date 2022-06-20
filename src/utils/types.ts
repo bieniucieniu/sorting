@@ -1,17 +1,27 @@
 
-export type CanvasObject ={
+export type CanvasObject = {
     canvas: HTMLCanvasElement,
     ctx: CanvasRenderingContext2D,
+
 }
 
-export type DrawZoneProperty = {
-    istart: number,
-    iend: number,
+export type ArrayObject = {  
+    array: number[],
+    steps: step[],
 }
 
-export type ColorProperty = {
+export type sortingAnimationProperty = {
+    delay: number,
+    swapColor: string,  
+    compareColor: string,
+}
+
+
+export type ArrayStylingProperty = {
     bgColor: string,
-    columnColor: string,
+    fgColor: string,
+    gap: number,
+    rise: number,
 }
 
 export type step = {

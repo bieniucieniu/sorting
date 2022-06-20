@@ -18,26 +18,31 @@
     <nav class="nav-bar">
       <ul class="nav-content">
         <li>
-          <button class="btn bubble-sort">Bubble sort</button>
+          <button class="btn" id="bubble-sort">BubbleSort</button>
         </li>
         <li>
-          <button class="btn insertion-sort">Insertion sort</button>
+          <button class="btn" id="insertion-sort">InsertionSort</button>
         </li>
         <li>
-          <button class="btn quicksort">Quicksort</button>
+          <button class="btn" id="quick-sort">QuickSort</button>
         </li>
         <li>
-          <button class="btn merge-sort">Merge sort</button>
+          <button class="btn" id="merge-sort">MergeSort</button>
         </li>
       </ul>
     </nav>
     <main class="main-content">
-      <div class="graph-container">
-        <div class="canvas-container">
-          <canvas id="canvas"></canvas>
+      <p class="current-sorting-name">BubbleSort</p>
+      <div class="canvas-container">
+        <canvas id="canvas"></canvas>
+      </div>
+      <div class="control-container">
+        <div class="control-item">
+          <input type="range" id="array-size" value="10" />
+          <button class="btn" id="reset">Reset</button>
+          <button class="btn" id="start">Start</button>
         </div>
       </div>
-      <div class="graph-context"></div>
     </main>
     <script type="module" src="./src/main.ts"></script>
   </body>

@@ -1,11 +1,5 @@
-let delay: number;
 
-export const setDelay = (newDelay: number) => {
-    if (newDelay < 0) {
-        throw new Error('Delay must be greater than 0');
-    }
-    delay = newDelay;
-}
-export const sleep = () => {
+
+export const sleep = (delay: number) => {
     return new Promise(resolve => setTimeout(resolve, delay));
 }

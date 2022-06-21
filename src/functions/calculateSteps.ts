@@ -1,16 +1,29 @@
 import { bubbleSort, insertionSort, mergeSort, quickSort } from "../algorithms";
+import { step, ArrayObject } from "../utils";
 
-export const calculateSteps = (Array: number[], sortingName?: string) => {
+export const calculateSteps = (array: number[], sortingName?: string): ArrayObject=> {
+    let steps: step[] = [];
+
     switch (sortingName) {
-        case "bubbleSort" || "BubbleSort"|| "bubble-sort":
-            return bubbleSort(Array);
-        case "insertionSort" || "InsertionSort" || "insertion-sort":
-            return insertionSort(Array);
-        case "quickSort" || "QuickSort" || "quick-sort":
-            return quickSort(Array);
-        case "mergeSort" || "MergeSort" || "merge-sort":
-            return mergeSort(Array);
+        case "BubbleSort":
+            steps = bubbleSort([...array]);
+            break;
+        case "InsertionSort":
+            steps = insertionSort([...array]);
+            break;
+        case "QuickSort":
+            steps = quickSort([...array]);
+            break;
+        case "MergeSort":
+            steps = mergeSort([...array]);
+            break;
         default:
-            return bubbleSort(Array);
+            steps = bubbleSort([...array]);
     }
+
+    const arrayObj = {
+        array: [...array],
+        steps: steps,
+    }
+    return arrayObj;
 }

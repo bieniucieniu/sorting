@@ -76,7 +76,7 @@ body {
     transform: translate(-1px, -1px);
 }
 
-.sorting-name {
+.current-algorithm-name {
     display: inline-block;
     font-size: 1.6em;
 }

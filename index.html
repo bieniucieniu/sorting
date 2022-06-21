@@ -32,13 +32,22 @@
       </ul>
     </nav>
     <main class="main-content">
-      <p class="current-sorting-name">BubbleSort</p>
+      <p class="current-algorithm-name">BubbleSort</p>
       <div class="canvas-container">
         <canvas id="canvas"></canvas>
       </div>
       <div class="control-container">
         <div class="control-item">
-          <input type="range" id="array-size" value="10" />
+          <div class="array-size-item">
+            <input type="range" id="array-size" value="10" />
+            <label for="array-size">Array Size:</label>
+            <input type="number" id="array-size-value" value="10" />
+          </div>
+          <div class="delay-item">
+            <input type="range" id="delay" value="10" />
+            <label for="delay">Delay:</label>
+            <input type="number" id="delay-value" value="10" />
+          </div>
           <button class="btn" id="reset">Reset</button>
           <button class="btn" id="start">Start</button>
         </div>

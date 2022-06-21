@@ -29,3 +29,8 @@ export type step = {
     target: number[],
     value?: number,
 }
+
+export type CurrentAlgorithm = {
+    name: string,
+    document: HTMLElement,
+}

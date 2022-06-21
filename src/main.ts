@@ -21,7 +21,9 @@ const currentAlgorithm: CurrentAlgorithm = {
 canvas.width = canvas.parentElement?.clientWidth || 300;
 canvas.height = canvas.parentElement?.clientHeight || 300;
 
-let array = shuffle(range(30));
+let size = 30;
+
+let array = shuffle(range(size));
 
 let canvasObj = {
     canvas,
@@ -38,7 +40,7 @@ let stylingProp = {
 };
 
 let animationProp = {
-    delay: 4,
+    delay: 200,
     swapColor: "red",
     compareColor: "green",
 };
@@ -53,16 +55,57 @@ window.addEventListener("resize", () => {
 });
 
 const reset = async () => {
+    if (size > 100 || canvas.width < 600) {
+        stylingProp.gap = 1;
+    }else{
+        stylingProp.gap = 5;
+    }
     stopAnimation();
-    array = shuffle(range(30));
+    array = shuffle(range(size));
     arrayObj = calculateSteps(array, currentAlgorithm.name);
     await sleep(animationProp.delay);
     drawArray(canvasObj, arrayObj, stylingProp);
 };
 
+const sizeInput = {
+    range: document.getElementById("array-size-range") as HTMLInputElement,
+    number: document.getElementById("array-size-number") as HTMLInputElement,
+}
 
+sizeInput.range.addEventListener("change", (e) => {
+    size = parseInt((e.target as HTMLInputElement).value);
+    sizeInput.number.value = size.toString();
+    reset();
+});
 
-document.querySelectorAll(".btn").forEach((btn) => {
+sizeInput.number.addEventListener("change", (e) => {
+    size = parseInt((e.target as HTMLInputElement).value);
+    if (size > 1000){
+        size = 1000;
+        sizeInput.number.value = size.toString();
+    } 
+    sizeInput.range.value = size.toString();
+    reset();
+});
+
+const delayInput = {
+    range: document.getElementById("delay-range") as HTMLInputElement,
+    number: document.getElementById("delay-number") as HTMLInputElement,
+}
+
+delayInput.range.addEventListener("change", (e) => {
+    animationProp.delay = parseInt((e.target as HTMLInputElement).value);
+    delayInput.number.value = animationProp.delay.toString();
+    reset();
+});
+
+delayInput.number.addEventListener("change", (e) => {
+    animationProp.delay = parseInt((e.target as HTMLInputElement).value);
+    delayInput.range.value = animationProp.delay.toString();
+    reset();
+});
+
+document.querySelectorAll("button").forEach((btn) => {
     switch (btn.id) {
         case "bubble-sort":
             btn.addEventListener("click", () => {

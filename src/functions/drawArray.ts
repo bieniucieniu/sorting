@@ -3,7 +3,7 @@ import {CanvasObject, ArrayObject , ArrayStylingProperty} from "../utils/types";
 export const drawArray = async (canvasObject: CanvasObject, arrayObject: ArrayObject ,stylingProperty?: ArrayStylingProperty) => {
     const {canvas, ctx} = canvasObject;
     const {array} = arrayObject;
-    const {bgColor, fgColor, gap, rise} = stylingProperty || {bgColor: "white", fgColor: "black", gap: 10, rise: 10};
+    const {bgColor, fgColor, gap, rise} = stylingProperty || {bgColor: "white", fgColor: "black", gap: 5, rise: 10};
     let barWidth = canvas.width / array.length;
     let barHeight = (canvas.height-rise)/ array.length;
 

@@ -96,13 +96,11 @@ const delayInput = {
 delayInput.range.addEventListener("change", (e) => {
     animationProp.delay = parseInt((e.target as HTMLInputElement).value);
     delayInput.number.value = animationProp.delay.toString();
-    reset();
 });
 
 delayInput.number.addEventListener("change", (e) => {
     animationProp.delay = parseInt((e.target as HTMLInputElement).value);
     delayInput.range.value = animationProp.delay.toString();
-    reset();
 });
 
 document.querySelectorAll("button").forEach((btn) => {

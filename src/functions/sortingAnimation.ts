@@ -15,7 +15,7 @@ export const sortingAnimation = async (canvasObject: CanvasObject, arrayObject: 
 
     let {canvas, ctx} = canvasObject;
     let {steps} = arrayObject;
-    let {gap, rise} = stylingProperty || {gap: 10, rise: 0};
+    let {gap, rise} = stylingProperty || {gap: 5, rise: 0};
     let { swapColor, compareColor} = sortingAnimationProperty || { swapColor: "red", compareColor: "blue"};
     
     let array = [...arrayObject.array];

@@ -35,7 +35,7 @@ let arrayObj = calculateSteps(array, currentAlgorithm.name);
 let stylingProp = {
     bgColor: bodyStyles.getPropertyValue("background-color"),
     fgColor: "#000000",
-    gap: 5,
+    gap: canvas.width < 600 ? 1 : 5,
     rise: 10,
 };
 

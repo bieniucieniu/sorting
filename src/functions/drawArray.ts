@@ -5,7 +5,7 @@ export const drawArray = async (canvasObject: CanvasObject, arrayObject: ArrayOb
     const {array} = arrayObject;
     const {bgColor, fgColor, gap, rise} = stylingProperty || {bgColor: "white", fgColor: "black", gap: 10, rise: 10};
     let barWidth = canvas.width / array.length;
-    let barHeight = canvas.height/ array.length;
+    let barHeight = (canvas.height-rise)/ array.length;
 
     ctx.fillStyle = bgColor;
     ctx.fillRect(0, 0, canvas.width, canvas.height);

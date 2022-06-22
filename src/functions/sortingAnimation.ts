@@ -21,7 +21,7 @@ export const sortingAnimation = async (canvasObject: CanvasObject, arrayObject: 
     let array = [...arrayObject.array];
 
     let barWidth = canvas.width / array.length;
-    let barHeight = canvas.height/ array.length;
+    let barHeight = (canvas.height-rise)/ array.length;
 
     for (let i = 0; i < steps.length && run; i++) {
         

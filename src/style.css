@@ -9,15 +9,10 @@
 }
 
 html {
-    --bg-color-primary: #f4f7f9;
-    --bg-color-secondary: #ffffff;
+    --bg-color-primary: #ffffff;
     --button-bg-color: #0000ff;
     --button-font-color: hsl(0, 0%, 100%);
     --button-bg-color-hover: #1300e8;
-    --button-font-color-hover: hsl(0, 0%, 90%);
-    --font-color-primary: hsl(240, 16%, 48%);
-    --font-color-secondary: hsl(240, 81%, 71%);
-    --font-color-tertiary: hsl(240, 81%, 71%);
 }
 
 body {
@@ -32,7 +27,7 @@ body {
     padding: 0.6em;
     margin: 0;
     justify-content: center;
-    background-color: var(--bg-color-secondary);
+    background-color: inherit;
 }
 
 .nav-content {
@@ -87,7 +82,7 @@ button:hover {
 .main-content {
     height: 100%;
     padding: 5em 10em 10em 10em;
-    background-color: var(--bg-color-secondary);
+    background-color: inherit;
 }
 
 .graph-container {

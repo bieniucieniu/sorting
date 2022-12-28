@@ -5,6 +5,7 @@ import {
     calculateSteps,
 } from "./functions";
 import { CurrentAlgorithm, range, shuffle, sleep } from "./utils";
+import "./style.css";
 
 const canvas = document.getElementById("canvas") as HTMLCanvasElement;
 const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
@@ -57,7 +58,7 @@ window.addEventListener("resize", () => {
 const reset = async () => {
     if (size > 100 || canvas.width < 600) {
         stylingProp.gap = 1;
-    }else{
+    } else {
         stylingProp.gap = 5;
     }
     stopAnimation();
@@ -70,7 +71,7 @@ const reset = async () => {
 const sizeInput = {
     range: document.getElementById("array-size-range") as HTMLInputElement,
     number: document.getElementById("array-size-number") as HTMLInputElement,
-}
+};
 
 sizeInput.range.addEventListener("change", (e) => {
     size = parseInt((e.target as HTMLInputElement).value);
@@ -80,10 +81,10 @@ sizeInput.range.addEventListener("change", (e) => {
 
 sizeInput.number.addEventListener("change", (e) => {
     size = parseInt((e.target as HTMLInputElement).value);
-    if (size > 1000){
+    if (size > 1000) {
         size = 1000;
         sizeInput.number.value = size.toString();
-    } 
+    }
     sizeInput.range.value = size.toString();
     reset();
 });
@@ -91,7 +92,7 @@ sizeInput.number.addEventListener("change", (e) => {
 const delayInput = {
     range: document.getElementById("delay-range") as HTMLInputElement,
     number: document.getElementById("delay-number") as HTMLInputElement,
-}
+};
 
 delayInput.range.addEventListener("change", (e) => {
     animationProp.delay = parseInt((e.target as HTMLInputElement).value);
